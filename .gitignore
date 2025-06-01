@@ -1,0 +1,9 @@
+# Ignore all
+!
+
+# Unignore important documents
+!README.md
+!.gitignore
+
+# Unignore source code files
+!*.html
