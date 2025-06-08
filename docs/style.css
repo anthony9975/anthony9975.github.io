@@ -1,8 +1,16 @@
+<!--Body Styles-->
+body {
+    background-color: 'white';
+}
 <!--Heading Styles-->
 h1 {
     font-family: 'georgia', 'serif';
     font-size: 35px;
     color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 <!--Paragraph style-->
@@ -10,4 +18,8 @@ p {
     font-family: 'times new roman', 'serif';
     font-size: 15px;
     color: black;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
