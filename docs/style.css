@@ -1,13 +1,13 @@
 /*Body Styles*/
 body {
-    background-color: 'white';
+    background-color: white;
 }
 
 /*Heading Styles*/
 h1 {
-    font-family: 'georgia', 'serif';
+    font-family: georgia, serif;
     font-size: 35px;
-    color: blue;
+    color: black;
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 10px;
@@ -16,10 +16,9 @@ h1 {
 
 /*Paragraph Style*/
 p {
-    font-family: 'times new roman', 'serif';
+    font-family: 'times new roman', serif;
     font-size: 15px;
     color: black;
-    border: solid black;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 10px;
