@@ -1,19 +1,20 @@
-<!--Body Styles-->
+/*Body Styles*/
 body {
     background-color: 'white';
 }
-<!--Heading Styles-->
+
+/*Heading Styles*/
 h1 {
     font-family: 'georgia', 'serif';
     font-size: 35px;
-    color: blue;
+    color: black;
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-<!--Paragraph Style-->
+/*Paragraph Style*/
 p {
     font-family: 'times new roman', 'serif';
     font-size: 15px;
