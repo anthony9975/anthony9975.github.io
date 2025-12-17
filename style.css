@@ -74,13 +74,3 @@ footer {
     margin-top: 4rem;
     color: #666;
 }
-
-/* Flexbox for project columns */
-.project_container {
-    display: flex;
-    gap: 2.5%;
-}
-
-.project_container div{
-    flex: 1;
-}

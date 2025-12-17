@@ -1,111 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!--Tells the compilier how to interept chars-->
-    <meta charset="UTF-8" />
-    <!--For responsive design-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <meta name="description" content="A collection of personal and professional projects." />
-    <!--Link the css style sheet-->
-    <link rel = "stylesheet" href="style.css"/>
+  <!--Tells the compilier how to interept chars-->
+  <meta charset="UTF-8" />
+  <!--For responsive design-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Link the css style sheet-->
+  <link rel="stylesheet" href="style.css" />
+  <title>Projects</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .controls button {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid #1f2933;
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+    }
+
+    .controls button.active,
+    .controls button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid #1f2933;
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .project-type {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-tech {
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      color: var(--accent);
+      margin-right: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <main class="container">
-    <header>
-      <h1>Projects</h1>
-      <p>
-        A curated selection of personal, academic, and professional work.
-        Each project highlights a specific problem, approach, and outcome.
-      </p>
-    </header>
+  <header>
+    <h1>Projects</h1>
+    <p>
+      A curated selection of my projects.
+    </p>
 
-    <section class="projects">
+    <div class="controls">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="software">Software</button>
+      <button data-filter="hardware">Hardware</button>
+      <button data-filter="embedded">Embedded</button>
+    </div>
+  </header>
 
-      <!-- Project 1 -->
-      <article class="project-card">
-        <h2>Project Title One</h2>
-
-        <div class="project-meta">
-          <span>2025</span>
-          <span>Personal Project</span>
-        </div>
-
+  <section class="projects-grid">
+    <!-- Project Card -->
+    <article class="card" data-category="software">
+      <div>
+        <div class="project-type">Software</div>
+        <h2 class="project-title">Multithreaded Task Scheduler</h2>
         <p class="project-description">
-          A brief description of the project, its purpose, and the main
-          challenges it addresses. Keep this concise but informative.
+          Designed and implemented a priority-based task scheduler in C++
+          supporting preemption and concurrent execution.
         </p>
+        <div class="project-tech">C++, POSIX Threads, Linux</div>
+      </div>
+      <div class="project-links">
+        <a href="#">Source</a>
+        <a href="#">Details</a>
+      </div>
+    </article>
+  </section>
 
-        <ul class="tech-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
 
-        <div class="project-links">
-          <a href="#" target="_blank" rel="noopener">Live Demo</a>
-          <a href="#" target="_blank" rel="noopener">Source Code</a>
-        </div>
-      </article>
+  <footer>
+    © 2025 Your Name · Computer Engineer
+  </footer>
 
-      <!-- Project 2 -->
-      <article class="project-card">
-        <h2>Project Title Two</h2>
+  <script>
+    const buttons = document.querySelectorAll('.controls button');
+    const cards = document.querySelectorAll('.project-card');
 
-        <div class="project-meta">
-          <span>2024</span>
-          <span>Client Work</span>
-        </div>
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
 
-        <p class="project-description">
-          Description of the second project. Emphasize results, metrics, or
-          constraints where relevant.
-        </p>
+        const filter = button.dataset.filter;
 
-        <ul class="tech-list">
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>Node.js</li>
-        </ul>
-
-        <div class="project-links">
-          <a href="#" target="_blank" rel="noopener">Case Study</a>
-          <a href="#" target="_blank" rel="noopener">Repository</a>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project-card">
-        <h2>Project Title Three</h2>
-
-        <div class="project-meta">
-          <span>2023</span>
-          <span>Research</span>
-        </div>
-
-        <p class="project-description">
-          A short explanation of the research problem, methodology, and
-          outcome.
-        </p>
-
-        <ul class="tech-list">
-          <li>Python</li>
-          <li>Data Analysis</li>
-          <li>Visualization</li>
-        </ul>
-
-        <div class="project-links">
-          <a href="#" target="_blank" rel="noopener">Paper</a>
-          <a href="#" target="_blank" rel="noopener">Code</a>
-        </div>
-      </article>
-
-    </section>
-
-    <footer>
-      <p>© 2025 Your Name. All projects listed are representative work.</p>
-    </footer>
-  </main>
+        cards.forEach(card => {
+          const category = card.dataset.category;
+          card.style.display = (filter === 'all' || filter === category)
+            ? 'flex'
+            : 'none';
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
