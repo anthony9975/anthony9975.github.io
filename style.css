@@ -5,6 +5,7 @@ body {
     color: #1a1a1a;
 }
 
+/* Header formatting*/
 header {
     padding: 2rem 4rem;
     display: flex;
@@ -16,38 +17,11 @@ header {
     top: 0;
     z-index: 100;
 }
-
-nav a {
+/* Formating for the navagation part links*/
+header a{
     margin-left: 2rem;
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-}
-
-.hero {
-    padding: 6rem 4rem;
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-}
-
-.hero img {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.1);
-}
-
-.hero-text h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
-.hero-text p {
-    max-width: 500px;
-    font-size: 1.1rem;
-    line-height: 1.6rem;
 }
 
 section {

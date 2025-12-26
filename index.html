@@ -29,22 +29,27 @@
 <body>
 
     <header>
-        <div class="logo"><strong>MySite</strong></div>
+        <div class="logo">
+            <a href="index.html"><strong>Anthony Ma</strong></a>
+        </div>
         <nav>
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="projects.html">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <div class="hero">
-        <img src="https://via.placeholder.com/260" alt="Profile Photo" />
+    <!--Hero Section-->
+    <div style = "padding: 6rem 4rem; display: flex; gap: 4rem; align-items: center;">
+        <img src="https://via.placeholder.com/260" alt="Profile Photo" 
+             style = "width: 260px; height: 260px; border-radius: 50%; object-fit: cover;
+                      box-shadow: 0 10px 22px rgba(0,0,0,0.1);"/>
         <div class="hero-text">
-            <p>
+            <p style = "max-width: 500px; font-size: 1.1rem; line-height: 1.6rem;">
                 Hello, my name is
             </p>
-            <h1>Anthony Ma</h1>
-            <p>
+            <h1 style = "font-size: 3rem; margin: 0;">Anthony Ma</h1>
+            <p style = "max-width: 500px; font-size: 1.1rem; line-height: 1.6rem;">
                 and welcome to my website. I'm so glad that you're here!
             </p>
         </div>
@@ -87,13 +92,14 @@
             </div>
 
             <div class="card">
-                <h3>Another Project</h3>
+                <img src = "RC Tank.JPG" width="100%">
+                <h3>RC Tank</h3>
                 <p>
-                    Another project description with details and links.
+                    A remote controlled tank.
                 </p>
             </div>
         </div>
-        <div style = "text-align: right; padding: 1% 2% 0% 0%; margin-bottom: -4%;">
+        <div style = "text-align: right; padding: 1% 2% 0% 0%; margin-bottom: -2%; font-size: 1.5rem;">
             <u><a href = "projects.html">More</a></u>
         </div>
     </section>
